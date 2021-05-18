@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2021.05.18 13:39:17.441.pas,C:\Users\Plotnikov\Documents\RAD Studio\Projects\Unit1.pas=D:\DB\Debts\5_1\Main.pas</Transaction>
+    <Transaction>2021.05.18 13:39:17.441.dfm,C:\Users\Plotnikov\Documents\RAD Studio\Projects\Unit1.dfm=D:\DB\Debts\5_1\Main.dfm</Transaction>
+    <Transaction>2021.05.18 13:39:31.610.dproj,C:\Users\Plotnikov\Documents\RAD Studio\Projects\Project1.dproj=D:\DB\Debts\5_1\Perfomance.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

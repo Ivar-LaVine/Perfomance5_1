@@ -1,0 +1,110 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 336
+  ClientWidth = 527
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 8
+    Width = 320
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object IBDatabase1: TIBDatabase
+    Connected = True
+    DatabaseName = '192.168.0.3:D:\DB\PR5_1KSP1.fdb'
+    Params.Strings = (
+      'user_name=student'
+      'password=edu-759'
+      'lc_ctype=WIN1251')
+    LoginPrompt = False
+    Left = 8
+    Top = 8
+  end
+  object IBTransaction1: TIBTransaction
+    Active = True
+    DefaultDatabase = IBDatabase1
+    Left = 40
+    Top = 8
+  end
+  object IBTable1: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'STU_ID'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'SURNAME'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'PATRONYMIC'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'DATEOFBIRTH'
+        DataType = ftDate
+      end
+      item
+        Name = 'GRP_ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'TICKET'
+        DataType = ftString
+        Size = 5
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$1'
+        Fields = 'TICKET'
+        Options = [ixUnique]
+      end
+      item
+        Name = 'PK_TSTUDENT'
+        Fields = 'STU_ID'
+        Options = [ixUnique]
+      end
+      item
+        Name = 'FK_TSTUDENT_2'
+        Fields = 'GRP_ID'
+      end>
+    StoreDefs = True
+    TableName = 'TSTUDENT'
+    Left = 72
+    Top = 8
+  end
+  object DataSource1: TDataSource
+    DataSet = IBTable1
+    Left = 104
+    Top = 8
+  end
+end
